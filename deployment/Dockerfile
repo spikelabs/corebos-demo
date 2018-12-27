@@ -7,7 +7,7 @@ RUN adduser -D -g 'www' www
 RUN mkdir /www
 RUN chown -R www:www /www
 
-COPY nginx.conf /etc/nginx/
+COPY deployment/nginx.conf /etc/nginx/
 
 RUN mkdir -p /run/nginx
 RUN mkdir -p /run/php
@@ -45,7 +45,7 @@ COPY --chown=mysql:mysql ./mysql /var/lib/mysql
 
 EXPOSE 80
 
-COPY supervisor.conf /etc/supervisor/conf.d/supervisord.conf
+COPY deployment/supervisor.conf /etc/supervisor/conf.d/supervisord.conf
 
 COPY --chown=www:www corebos/. /www
 RUN rm -rf /www/build/coreBOSTests
