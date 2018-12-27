@@ -1,0 +1,16 @@
+sudo: required
+services:
+  - docker
+  - mysql
+
+before_install:
+  - mysql -u root --password="" corebos < dev/coreBOSTests.sql
+  - docker build -t spikelabs/corebos-demo-test -f ./dev/Dockerfile .
+
+script:
+  - docker run --network="host" spikelabs/corebos-demo-test
+
+after_success:
+  - docker build -t spikelabs/corebos-demo -f ./deployment/Dockerfile .
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push spikelabs/corebos-demo
