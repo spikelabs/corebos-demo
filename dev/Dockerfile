@@ -27,6 +27,20 @@ COPY --chown=www:www corebos/. /www
 COPY --chown=www:www dev/config.inc.php /
 RUN mv config.inc.php /www/
 
+RUN apk update
+RUN apk upgrade
+RUN apk add --update curl openssl
+
+RUN curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
+
+RUN mv phpcs.phar /usr/local/bin/
+
+RUN chmod +x /usr/local/bin/phpcs.phar
+
+RUN apk add --update nodejs nodejs-npm
+
+RUN npm install -g eslint
+
 WORKDIR /www
 
 CMD ["build/coreBOSTests/phpunit", "-c", "build/coreBOSTests/phpunit.xml"]
