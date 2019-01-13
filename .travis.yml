@@ -6,7 +6,7 @@ services:
 before_install:
   - mysql -e 'CREATE DATABASE corebos;'
   - curl -OL https://raw.githubusercontent.com/tsolucio/coreBOSTests/master/database/coreBOSTests.sql
-  - mysql -u root --password="" corebos < dev/coreBOSTests.sql
+  - mysql -u root --password="" corebos < coreBOSTests.sql
   - docker build -t spikelabs/corebos-demo-test -f ./dev/Dockerfile .
 
 script:
