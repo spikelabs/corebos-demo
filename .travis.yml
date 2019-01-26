@@ -9,7 +9,7 @@ before_install:
   - docker build -t spikelabs/corebos-demo-test -f ./dev/Dockerfile .
 
 script:
-  - docker run spikelabs/corebos-demo-test php -i
+  - docker run --network host spikelabs/corebos-demo-test
 
 after_success:
   - docker build -t spikelabs/corebos-demo -f ./deployment/Dockerfile .
