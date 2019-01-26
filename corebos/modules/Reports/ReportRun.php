@@ -51,7 +51,8 @@ class ReportRun extends CRMEntity {
 						'Quotes_Total', 'Quotes_Sub_Total', 'Quotes_S&H_Amount', 'Quotes_Discount_Amount', 'Quotes_Adjustment',
 						'SalesOrder_Total', 'SalesOrder_Sub_Total', 'SalesOrder_S&H_Amount', 'SalesOrder_Discount_Amount', 'SalesOrder_Adjustment',
 						'PurchaseOrder_Total', 'PurchaseOrder_Sub_Total', 'PurchaseOrder_S&H_Amount', 'PurchaseOrder_Discount_Amount', 'PurchaseOrder_Adjustment',
-						'Issuecards_Total', 'Issuecards_Sub_Total', 'Issuecards_S&H_Amount', 'Issuecards_Discount_Amount', 'Issuecards_Adjustment',
+						'Issuecards_Total', 'Issuecards_Sub_Total', 'Issuecards_S&H_Amount', 'Issuecards_Discount_Amount', 'Issuecards_Adjustment','Invoice_SandH_Amount',
+						'Quotes_SandH_Amount','SalesOrder_SandH_Amount','PurchaseOrder_SandH_Amount','Issuecards_SandH_Amount',
 						);
 	public $ui10_fields = array();
 	public $ui101_fields = array();
@@ -2950,7 +2951,7 @@ class ReportRun extends CRMEntity {
 				$field_columnalias = $module_name."_".$fieldlist[3];
 				$field_columnalias = decode_html($field_columnalias);
 				$query_columnalias = substr($field_columnalias, 0, strrpos($field_columnalias, '_'));
-				$query_columnalias = str_replace(array(' ','&'), '_', $query_columnalias);
+				$query_columnalias = str_replace(array(' ','&','(',')'), '_', $query_columnalias);
 				$sckey = $field_tablename.':'.$field_columnname.':'.$query_columnalias.':'.$field_columnname.':N'; // vtiger_invoice:subject:Invoice_Subject:subject:V
 				$scval = $field_tablename.'.'.$field_columnname." AS '".$query_columnalias."'"; // vtiger_invoice.subject AS 'Invoice_Subject'
 				$seltotalcols[$sckey] = $scval;

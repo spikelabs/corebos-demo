@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-12-27 13:12:16
+/* Smarty version 3.1.33, created on 2019-01-26 13:35:02
   from '/www/Smarty/templates/Home/MainHomeBlock.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c24cfb0018af7_90308328',
+  'unifunc' => 'content_5c4c6206dc64c9_89637264',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a6cb3b16f20b048f032bb9d8efbadf0d887ef1d7' => 
     array (
       0 => '/www/Smarty/templates/Home/MainHomeBlock.tpl',
-      1 => 1545915642,
+      1 => 1548507597,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c24cfb0018af7_90308328 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c4c6206dc64c9_89637264 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('homepagedashboard_title', getTranslatedString('Home Page Dashboard','Home'));
 $_smarty_tpl->_assignInScope('keymetrics_title', getTranslatedString('Key Metrics','Home'));
 $_smarty_tpl->_assignInScope('stitle', $_smarty_tpl->tpl_vars['tablestuff']->value['Stufftitle']);
@@ -145,7 +145,7 @@ echo '<script'; ?>
 <?php if ($_smarty_tpl->tpl_vars['tablestuff']->value['Stufftype'] != "Tag Cloud") {?>
 	<table width="100%" cellpadding="0" cellspacing="0" class="small scrollLink">
 	<tr>
-		<td align="left">
+		<td align="left" class="slds-p-left_small">
 			<a href="javascript:;" onclick="addScrollBar(<?php echo $_smarty_tpl->tpl_vars['tablestuff']->value['Stuffid'];?>
 );">
 				<?php echo $_smarty_tpl->tpl_vars['MOD']->value['LBL_SCROLL'];?>
@@ -153,7 +153,7 @@ echo '<script'; ?>
 			</a>
 		</td>
 <?php if ($_smarty_tpl->tpl_vars['tablestuff']->value['Stufftype'] == "Module" || ($_smarty_tpl->tpl_vars['tablestuff']->value['Stufftype'] == "Default" && $_smarty_tpl->tpl_vars['tablestuff']->value['Stufftitle'] != "Key Metrics" && $_smarty_tpl->tpl_vars['tablestuff']->value['Stufftitle'] != $_smarty_tpl->tpl_vars['homepagedashboard_title']->value && $_smarty_tpl->tpl_vars['tablestuff']->value['Stufftitle'] != "My Group Allocation") || $_smarty_tpl->tpl_vars['tablestuff']->value['Stufftype'] == "RSS" || $_smarty_tpl->tpl_vars['tablestuff']->value['Stufftype'] == "DashBoard" || $_smarty_tpl->tpl_vars['tablestuff']->value['Stufftype'] == "ReportCharts") {?>
-		<td align="right">
+		<td style="text-align: right;" class="slds-p-right_small">
 			<a href="#" id="a_<?php echo $_smarty_tpl->tpl_vars['tablestuff']->value['Stuffid'];?>
 ">
 				<?php echo $_smarty_tpl->tpl_vars['MOD']->value['LBL_MORE'];?>

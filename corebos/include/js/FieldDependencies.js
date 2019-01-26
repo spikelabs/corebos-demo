@@ -81,12 +81,19 @@ FieldDependencies.prototype.setup = function (sourceform, datasource) {
 		return;
 	}
 
-	jQuery('input', this.baseform).bind('change', function (ev) {
-		thisContext.actOnSelectChange(ev);
-	});
-	jQuery('select', this.baseform).bind('change', function (ev) {
-		thisContext.actOnSelectChange(ev);
-	});
+	var nodelist = document.querySelectorAll('input,select');
+	for (var i = 0; i < nodelist.length; i++) {
+		// we should use addEventListener here but it doesn't work on the jscalendar element nor on the initial loading of the page
+		if (nodelist[i].id.substring(0, 12)=='jscal_field_') {
+			nodelist[i].onchange = function (ev) {
+				thisContext.actOnSelectChange(ev);
+			};
+		} else {
+			jQuery('#'+nodelist[i].id).bind('change', function (ev) {
+				thisContext.actOnSelectChange(ev);
+			});
+		}
+	}
 };
 
 /**
@@ -118,6 +125,7 @@ FieldDependencies.prototype.actOnSelectChange = function (event) {
 			var condArray=new Array();
 			var condOperatorArray=new Array();
 			for (var j=0; j<conditions.length; j++) {
+				newGroup=false;
 				field=conditions[j]['columnname'];
 				comparator=conditions[j]['comparator'];
 				value=conditions[j]['value'];

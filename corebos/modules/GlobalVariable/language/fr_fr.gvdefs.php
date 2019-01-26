@@ -244,6 +244,13 @@ $GlobalVariableDefinitons = array(
 	'values' => 'all | admin | none',
 	'definition' => 'Permet l\'activation ou la désactivation de la fonctionalité export. Si "all" (par défaut) tous les utilisateurs peuvent exporter. Si "admin" seul les administrateurs peuvent exporter. Si "none" personne ne peut exporter.',
 ),
+'Application_SaveAndRepeatActive' => array(
+	'status' => 'Implemented',
+	'valuetype' => 'Boolean',
+	'category' => 'Application',
+	'values' => '0 | 1',
+	'definition' => 'Activate "Save and Repeat" action in edit mode. Default deactivated',
+),
 'Application_ListView_Max_Text_Length' => array(
 	'status' => 'Implémenté',
 	'valuetype' => 'Entier',
@@ -1258,6 +1265,20 @@ $GlobalVariableDefinitons = array(
 	'category' => 'Application',
 	'values' => '',
 	'definition' => 'Maximum number of returned table rows as output of the Business Question answer.',
+),
+'PurchaseOrder_TransferCostPrice' => array(
+	'status' => 'Implemented',
+	'valuetype' => 'Boolean',
+	'category' => 'Application',
+	'values' => '0|1',
+	'definition' => 'When set to \'1\', creating a PurchaseOrder from another record (i.e. SalesOrder, Product) will use the product/service costprice in inventorylines rather than the selling price. You can further specify this behavior by checking the \'In Module List\' box and selecting the source modules you want this to happen for in the module list.',
+),
+'PurchaseOrder_IgnoreTransferDiscount' => array(
+	'status' => 'Implemented',
+	'valuetype' => 'Boolean',
+	'category' => 'Application',
+	'values' => '0|1',
+	'definition' => 'When set to \'1\', transferring a line from for instance a salesorder to a purschaseorder will set all discounts to zero regardless of what the source module lists for that line. You can fine-tune the source modules by checking \'In Module list\' and selecting the source modules.',
 ),
 );
 

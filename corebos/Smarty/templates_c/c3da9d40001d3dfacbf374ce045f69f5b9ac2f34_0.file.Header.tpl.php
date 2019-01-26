@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-12-27 13:12:15
+/* Smarty version 3.1.33, created on 2019-01-26 13:35:02
   from '/www/Smarty/templates/Header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c24cfafb9f760_90878077',
+  'unifunc' => 'content_5c4c6206111aa9_14534990',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3da9d40001d3dfacbf374ce045f69f5b9ac2f34' => 
     array (
       0 => '/www/Smarty/templates/Header.tpl',
-      1 => 1545915642,
+      1 => 1548507597,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Clock.tpl' => 1,
   ),
 ),false)) {
-function content_5c24cfafb9f760_90878077 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c4c6206111aa9_14534990 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -210,8 +210,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 							</td>
 							<?php if ($_smarty_tpl->tpl_vars['Application_Global_Search_Active']->value) {?>
 							<td align ="right" style="background-color:#FFFFEF; vertical-align:middle;padding:5px;" onclick="UnifiedSearch_SelectModuleForm(this);">
-								<a href='javascript:void(0);' ><img src="<?php echo vtiger_imageurl('arrow_down_black.png',$_smarty_tpl->tpl_vars['THEME']->value);?>
-" align='left' border=0></a>
+								<a href='javascript:void(0);'><img src="<?php echo vtiger_imageurl('arrow_down_black.png',$_smarty_tpl->tpl_vars['THEME']->value);?>
+" align='left' style="max-width:initial;"></a>
 							</td>
 							<td style="background-color:#cccccc">
 								<input type="image" class="searchBtn" alt="<?php echo $_smarty_tpl->tpl_vars['APP']->value['LBL_FIND'];?>

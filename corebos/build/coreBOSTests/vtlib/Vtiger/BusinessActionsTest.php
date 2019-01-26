@@ -31,7 +31,7 @@ class BusinessActionsTest extends TestCase {
 		$actual = Vtiger_Link::getAllByType(getTabid('CobroPago'), array('DETAILVIEWBASIC', 'DETAILVIEW', 'DETAILVIEWWIDGET'), $customlink_params);
 		$expectedLink = new Vtiger_Link();
 		$expectedLink->tabid = '42';
-		$expectedLink->linkid = '43542';
+		$expectedLink->linkid = $actual['DETAILVIEWBASIC'][0]->linkid;
 		$expectedLink->linktype = 'DETAILVIEWBASIC';
 		$expectedLink->linklabel = 'View History';
 		$expectedLink->linkurl = "javascript:ModTrackerCommon.showhistory('14297')";
@@ -54,7 +54,7 @@ class BusinessActionsTest extends TestCase {
 		$actual = Vtiger_Link::getAllByType(getTabid('CobroPago'), 'DETAILVIEWBASIC', $customlink_params);
 		$expectedLink = new Vtiger_Link();
 		$expectedLink->tabid = '42';
-		$expectedLink->linkid = '43542';
+		$expectedLink->linkid = $actual[0]->linkid;
 		$expectedLink->linktype = 'DETAILVIEWBASIC';
 		$expectedLink->linklabel = 'View History';
 		$expectedLink->linkurl = "javascript:ModTrackerCommon.showhistory('14297')";
@@ -65,9 +65,53 @@ class BusinessActionsTest extends TestCase {
 		$expectedLink->handler_class = 'ModTracker';
 		$expectedLink->handler = 'isViewPermitted';
 		$expectedLink->onlyonmymodule = '0';
-		$expected = array(
-			'DETAILVIEWBASIC' => $expectedLink,
-		);
+		$expected = array($expectedLink);
+		$this->assertEquals($expected, $actual);
+		/////////////////////////////////////////
+		$actual = Vtiger_Link::getAllByType(getTabid('GlobalVariable')); // getAll
+		$expected = array();
+		$expectedLink = new Vtiger_Link();
+		$expectedLink->tabid = '56';
+		$expectedLink->linkid = $actual[0]->linkid;
+		$expectedLink->linktype = 'DETAILVIEWBASIC';
+		$expectedLink->linklabel = 'Test';
+		$expectedLink->linkurl = "javascript:gotourl('index.php?module=GlobalVariable&action=TestGlobalVar&parenttab=Tools')";
+		$expectedLink->linkicon = '';
+		$expectedLink->sequence = '0';
+		$expectedLink->status = false;
+		$expectedLink->handler_path = '';
+		$expectedLink->handler_class = '';
+		$expectedLink->handler = '';
+		$expectedLink->onlyonmymodule = '0';
+		$expected[] = $expectedLink;
+		$expectedLink = new Vtiger_Link();
+		$expectedLink->tabid = '56';
+		$expectedLink->linkid = $actual[1]->linkid;
+		$expectedLink->linktype = 'LISTVIEWBASIC';
+		$expectedLink->linklabel = 'Test';
+		$expectedLink->linkurl = "javascript:gotourl('index.php?module=GlobalVariable&action=TestGlobalVar&parenttab=Tools')";
+		$expectedLink->linkicon = '';
+		$expectedLink->sequence = '0';
+		$expectedLink->status = false;
+		$expectedLink->handler_path = '';
+		$expectedLink->handler_class = '';
+		$expectedLink->handler = '';
+		$expectedLink->onlyonmymodule = '0';
+		$expected[] = $expectedLink;
+		$expectedLink = new Vtiger_Link();
+		$expectedLink->tabid = '56';
+		$expectedLink->linkid = $actual[2]->linkid;
+		$expectedLink->linktype = 'LISTVIEWBASIC';
+		$expectedLink->linklabel = 'Definitions';
+		$expectedLink->linkurl = "javascript:gotourl('index.php?module=GlobalVariable&action=GlobalVariableDefinitions&parenttab=Tools')";
+		$expectedLink->linkicon = '';
+		$expectedLink->sequence = '0';
+		$expectedLink->status = false;
+		$expectedLink->handler_path = '';
+		$expectedLink->handler_class = '';
+		$expectedLink->handler = '';
+		$expectedLink->onlyonmymodule = '0';
+		$expected[] = $expectedLink;
 		$this->assertEquals($expected, $actual);
 	}
 
@@ -115,7 +159,7 @@ class BusinessActionsTest extends TestCase {
 		$link->onlyonmymodule = $onlyonmymodule;
 
 		// Adding link object to expectedLinks
-		$expectedLinks["LISTVIEWBASIC"] = $link;
+		$expectedLinks[] = $link;
 
 		// Delete created link
 		Vtiger_Link::deleteLink($tabid, $linktype, $linklabel);
@@ -163,12 +207,8 @@ class BusinessActionsTest extends TestCase {
 		$module_contacts = Vtiger_Module::getInstance('Contacts');
 		$actualLinks = $module_contacts->getLinks();
 
-		// Last link
-		$lastLink = end($actualLinks);
-		reset($actualLinks);
-
 		// Remove last link
-		array_pop($actualLinks);
+		$lastLink = array_pop($actualLinks);
 
 		// Delete last link
 		Vtiger_Link::deleteLink($lastLink->tabid, $lastLink->linktype, $lastLink->linklabel);
@@ -182,8 +222,7 @@ class BusinessActionsTest extends TestCase {
 		$handlerInfo['class'] = $lastLink->handler_class;
 		$handlerInfo['method'] = $lastLink->handler;
 
-		$module_contacts->addLink($lastLink->linktype, $lastLink->linklabel, $lastLink->linkurl, $lastLink->icon, $lastLink->sequence, $handlerInfo, $lastLink->onlyonmymodule);
-
+		$module_contacts->addLink($lastLink->linktype, $lastLink->linklabel, $lastLink->linkurl, $lastLink->linkicon, $lastLink->sequence, $handlerInfo, $lastLink->onlyonmymodule);
 		$this->assertEquals($expectedLinks, $actualLinks);
 	}
 
@@ -207,7 +246,7 @@ class BusinessActionsTest extends TestCase {
 			$handlerInfo['class'] = $link->handler_class;
 			$handlerInfo['method'] = $link->handler;
 
-			$module_contacts->addLink($link->linktype, $link->linklabel, $link->linkurl, $link->icon, (int)$link->sequence, $handlerInfo, $link->onlyonmymodule);
+			$module_contacts->addLink($link->linktype, $link->linklabel, $link->linkurl, $link->linkicon, (int)$link->sequence, $handlerInfo, $link->onlyonmymodule);
 		}
 
 		$this->assertEquals(0, count($expectedLinks));

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-12-27 13:12:15
+/* Smarty version 3.1.33, created on 2019-01-26 13:35:02
   from '/www/Smarty/templates/Home/Homestuff.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c24cfafee5c69_23030966',
+  'unifunc' => 'content_5c4c6206d4ed07_29699286',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e2b232037690fe50476a33118af19d1105df19f1' => 
     array (
       0 => '/www/Smarty/templates/Home/Homestuff.tpl',
-      1 => 1545915642,
+      1 => 1548507597,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Home/FirstTimeLogin.tpl' => 1,
   ),
 ),false)) {
-function content_5c24cfafee5c69_23030966 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c4c6206d4ed07_29699286 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
  type="text/javascript" src="modules/Home/Homestuff.js"><?php echo '</script'; ?>
 >

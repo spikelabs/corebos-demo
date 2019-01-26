@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-12-27 13:12:15
+/* Smarty version 3.1.33, created on 2019-01-26 13:35:02
   from '/www/Smarty/templates/Clock.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c24cfafbeb9a1_27018333',
+  'unifunc' => 'content_5c4c620614faa6_48583531',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '173a663f9757a52153155499183094c0f01f53a1' => 
     array (
       0 => '/www/Smarty/templates/Clock.tpl',
-      1 => 1545915642,
+      1 => 1548507597,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c24cfafbeb9a1_27018333 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c4c620614faa6_48583531 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['WORLD_CLOCK_DISPLAY']->value == 'true') {?>
 
 <div id="wclock" style="z-index:10000001;" class="layerPopup">

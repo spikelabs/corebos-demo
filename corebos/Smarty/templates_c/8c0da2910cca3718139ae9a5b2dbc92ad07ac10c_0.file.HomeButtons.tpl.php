@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-12-27 13:12:15
+/* Smarty version 3.1.33, created on 2019-01-26 13:35:02
   from '/www/Smarty/templates/Home/HomeButtons.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c24cfaff12004_82291252',
+  'unifunc' => 'content_5c4c6206d7dc47_33224212',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8c0da2910cca3718139ae9a5b2dbc92ad07ac10c' => 
     array (
       0 => '/www/Smarty/templates/Home/HomeButtons.tpl',
-      1 => 1545915642,
+      1 => 1548507597,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c24cfaff12004_82291252 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c4c6206d7dc47_33224212 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <table border=0 cellspacing=0 cellpadding=5 width="50%" class="small homePageButtons">
 <tr style="cursor: pointer;">
@@ -37,9 +37,9 @@ function content_5c24cfaff12004_82291252 (Smarty_Internal_Template $_smarty_tpl)
 
 	<td align='left'>
 		<img width="27" height="27" onClick='fnAddWindow(this,"addWidgetDropDown");' onMouseOut='fnRemoveWindow();' src="<?php echo vtiger_imageurl('btnL3Add.gif',$_smarty_tpl->tpl_vars['THEME']->value);?>
-" border="0" title="<?php echo $_smarty_tpl->tpl_vars['MOD']->value['LBL_HOME_ADDWINDOW'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['MOD']->value['LBL_HOME_ADDWINDOW'];?>
 " alt"<?php echo $_smarty_tpl->tpl_vars['MOD']->value['LBL_HOME_ADDWINDOW'];?>
-" style="cursor:pointer;">
+" style="cursor:pointer;border:0;max-width:initial;">
 	</td>
 
 <?php if ($_smarty_tpl->tpl_vars['CHECK']->value['Calendar'] == 'yes' && $_smarty_tpl->tpl_vars['CALENDAR_ACTIVE']->value == 'yes' && $_smarty_tpl->tpl_vars['CALENDAR_DISPLAY']->value == 'true') {?>
@@ -48,7 +48,7 @@ function content_5c24cfaff12004_82291252 (Smarty_Internal_Template $_smarty_tpl)
 		<img src="<?php echo vtiger_imageurl('btnL3Calendar.gif',$_smarty_tpl->tpl_vars['THEME']->value);?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['APP']->value['LBL_CALENDAR_ALT'];?>
 " title="<?php echo $_smarty_tpl->tpl_vars['APP']->value['LBL_CALENDAR_TITLE'];?>
-" border=0>
+" style="border:0;max-width:initial;">
 		</a>
 	</td>
 <?php }
@@ -57,7 +57,7 @@ if ($_smarty_tpl->tpl_vars['WORLD_CLOCK_DISPLAY']->value == 'true') {?>
 		<a href="javascript:;"><img src="<?php echo $_smarty_tpl->tpl_vars['IMAGE_PATH']->value;?>
 btnL3Clock.gif" alt="<?php echo $_smarty_tpl->tpl_vars['APP']->value['LBL_CLOCK_ALT'];?>
 " title="<?php echo $_smarty_tpl->tpl_vars['APP']->value['LBL_CLOCK_TITLE'];?>
-" border=0 onClick="fnvshobj(this,'wclock');"></a>
+" style="border:0;max-width:initial;" onClick="fnvshobj(this,'wclock');"></a>
 	</td>
 <?php }
 if ($_smarty_tpl->tpl_vars['CALCULATOR_DISPLAY']->value == 'true') {?>
@@ -66,19 +66,19 @@ if ($_smarty_tpl->tpl_vars['CALCULATOR_DISPLAY']->value == 'true') {?>
 		<a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['IMAGE_PATH']->value;?>
 btnL3Calc.gif" alt="<?php echo $_smarty_tpl->tpl_vars['APP']->value['LBL_CALCULATOR_ALT'];?>
 " title="<?php echo $_smarty_tpl->tpl_vars['APP']->value['LBL_CALCULATOR_TITLE'];?>
-" border=0 onClick="fnvshobj(this,'calculator_cont');fetch_calc();"></a>
+" style="border:0;max-width:initial;" onClick="fnvshobj(this,'calculator_cont');fetch_calc();"></a>
 	</td>
 <?php }?>
 	<td>
 		<img width="27" height="27" src="<?php echo vtiger_imageurl('btnL3Tracker.gif',$_smarty_tpl->tpl_vars['THEME']->value);?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['APP']->value['LBL_LAST_VIEWED'];?>
 " title="<?php echo $_smarty_tpl->tpl_vars['APP']->value['LBL_LAST_VIEWED'];?>
-" border="0" onClick="fnvshobj(this,'tracker');">
+" style="border:0;max-width:initial;" onClick="fnvshobj(this,'tracker');">
 	</td>
 
 	<td align='left'>
 		<img width="27" height="27" onClick='showOptions("changeLayoutDiv");' src="<?php echo vtiger_imageurl('orgshar.gif',$_smarty_tpl->tpl_vars['THEME']->value);?>
-" border="0" title="<?php echo $_smarty_tpl->tpl_vars['MOD']->value['LBL_HOME_LAYOUT'];?>
+" style="border:0;max-width:initial;" title="<?php echo $_smarty_tpl->tpl_vars['MOD']->value['LBL_HOME_LAYOUT'];?>
 " alt"<?php echo $_smarty_tpl->tpl_vars['MOD']->value['LBL_HOME_LAYOUT'];?>
 " style="cursor:pointer;">
 	</td>
@@ -149,8 +149,10 @@ btnL3Calc.gif" alt="<?php echo $_smarty_tpl->tpl_vars['APP']->value['LBL_CALCULA
 		<table width="100%" border="0" cellpadding="5" cellspacing="0" class="layerHeadingULine">
 		<tr>
 			<td class="layerPopupHeading" align="left" id="divHeader"></td>
-			<td align="right"><a href="javascript:;" onclick="fnhide('addWidgetsDiv');document.getElementById('stufftitle_id').value='';"><img src="<?php echo vtiger_imageurl('close.gif',$_smarty_tpl->tpl_vars['THEME']->value);?>
-" border="0"  align="absmiddle" /></a></td>
+			<td align="right"><a href="javascript:;" onclick="fnhide('addWidgetsDiv');document.getElementById('stufftitle_id').value='';">
+				<img src="<?php echo vtiger_imageurl('close.gif',$_smarty_tpl->tpl_vars['THEME']->value);?>
+" style="border:0;max-width:initial;" align="absmiddle" /></a>
+			</td>
 		</tr>
 		</table>
 		<table border=0 cellspacing=0 cellpadding=5 width=95% align=center>
@@ -299,7 +301,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</td>
 		<td>
 			<img onclick="hideOptions('changeLayoutDiv');" src="<?php echo vtiger_imageurl('close.gif',$_smarty_tpl->tpl_vars['THEME']->value);?>
-" border="0" align="right" style="cursor: pointer;"/>
+" align="right" style="cursor: pointer;border:0;max-width:initial;"/>
 		</td>
 	</tr>
 	<tr id="numberOfColumns">
